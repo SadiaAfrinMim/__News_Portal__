@@ -32,6 +32,8 @@ const Navbar = () => {
         </ul>
       </NavigationMenuContent>
     </NavigationMenuLink>
+    <NavigationMenuLink href="/news">
+        About</NavigationMenuLink>
      
     </NavigationMenuItem>
   </NavigationMenuList>
