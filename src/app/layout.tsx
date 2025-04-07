@@ -29,7 +29,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <Navbar></Navbar>
-        {children}
+       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+">
+       {children}
+       </main>
         <footer>hello footer how are you what are you doing guys</footer>
       </body>
     </html>
