@@ -1,12 +1,16 @@
+"use client"
+
 import Link from 'next/link'
 import React from 'react'
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu'
 import { Switch } from '../ui/switch'
 import { Button } from '../ui/button'
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { usePathname } from 'next/navigation'
 
 
 const Navbar = () => {
+  const pathname = usePathname()
   return (
    <header className='py-4 shadow-md'>
     <nav className='max-w-7xl mx-auto flex  justify-between items-center px-4 sm:px-6 lg:px-8'>
@@ -19,26 +23,26 @@ const Navbar = () => {
   <NavigationMenuList>
     <NavigationMenuItem className='flex items-center space-x-8'>
      
-        <NavigationMenuLink className='hover:text-red-500 ' href="/news">News</NavigationMenuLink>
+        <NavigationMenuLink className={`${pathname==='/news'?'text-red-500 text-semibold':''}hover:text-red-500`} href="/news">News</NavigationMenuLink>
 
-        <NavigationMenuLink className='hover:text-red-500 text-base' href="/services">
+        <NavigationMenuLink className={`${pathname==='/news'?'text-red-500 text-semibold':''}hover:text-red-500`}  href="/services">
       <NavigationMenuTrigger className='text-gray-500'>services</NavigationMenuTrigger>
       <NavigationMenuContent>
         <ul className='text-gray-600 shadow-md rounded-md px-5 py-4 space-x-2'>
             <li>
-            <NavigationMenuLink href='/services/web'>web Development</NavigationMenuLink>
+            <NavigationMenuLink className={`${pathname==='/services/web'?'text-red-500 text-semibold':''}hover:text-red-500`} href='/services/web'>web Development</NavigationMenuLink>
             </li>
             <li>
-            <NavigationMenuLink href='/services/marketting'>Digital Marketting</NavigationMenuLink>
+            <NavigationMenuLink className={`${pathname==='/services/marketting'?'text-red-500 text-semibold':''}hover:text-red-500`} href='/services/marketting'>Digital Marketting</NavigationMenuLink>
             </li>
-            <NavigationMenuLink href='/services/seo'>SEO</NavigationMenuLink>
+            <NavigationMenuLink className={`${pathname==='/services/seo'?'text-red-500 text-semibold':'' }hover:text-red-500`} href='/services/seo'>SEO</NavigationMenuLink>
         </ul>
       </NavigationMenuContent>
     </NavigationMenuLink>
-    <NavigationMenuLink href="/about">
+    <NavigationMenuLink className={`${pathname==='/about'?'text-red-500 text-semibold':''}hover:text-red-500`} href="/about">
         About</NavigationMenuLink>
 
-        <NavigationMenuLink href="/contact">
+        <NavigationMenuLink className={`${pathname==='/contact'?'text-red-500 text-semibold':''}hover:text-red-500`} href="/contact">
         Contact</NavigationMenuLink>
      
     </NavigationMenuItem>
