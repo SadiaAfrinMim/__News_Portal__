@@ -14,7 +14,7 @@ const NewsCard = ({item}:NewsCardProps) => {
         </Link>
         <div>
             <h2 className='text-xl font-semibold my-3'>{item.title}</h2>
-            <p className='mb-4'>{item.details}</p>
+            <p className='mb-4'>{item.details.substring(0,100)}..</p>
             <Link href={`/news/${item._id}`}>
             <Button variant={'default'}>Read More</Button>
             </Link>
